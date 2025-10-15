@@ -214,10 +214,62 @@
             turning complex problems into simple, beautiful and intuitive designs.
           </p>
 
+          <section class="about-text">
+
+
+          <!--test-->
+
+
+          <span class="subtitle">Hello Welcome to my simple portfolio website!</span>
           <h2>
             <span>Hello I'm <span class="glitch-text">Raditya</span>. </span>
             <span style="display: inline-block; color: rgb(128, 184, 236);" class="text">And I'm </span>   
           </h2>
+          
+          <p>
+            I'm Radit, an enthusiastic beginner in the field of Coding, eager to learn and develop new skills.  </p>
+            <script>
+              var textList = [" a WhatsApp Bot Developer","a Web Development.", "a Programmer.", "a Personal Portfolio Develonpmet."];
+              var textElement = document.querySelector('.text');
+            
+              var currentIndex = 0;
+              var isDeleting = false;
+              var currentText = '';
+              var typingSpeed = 100;
+              var erasingSpeed = 50;
+              var newTextDelay = 1000;
+            
+              function typeEffect() {
+                var fullText = textList[currentIndex];
+                
+                if (isDeleting) {
+                  currentText = fullText.substring(0, currentText.length - 1);
+                } else {
+                  currentText = fullText.substring(0, currentText.length + 1);
+                }
+            
+                textElement.textContent = currentText;
+            
+                if (!isDeleting && currentText === fullText) {
+                  isDeleting = true;
+                  typingSpeed = erasingSpeed;
+                  setTimeout(typeEffect, newTextDelay);
+                } else if (isDeleting && currentText === '') {
+                  isDeleting = false;
+                  currentIndex = (currentIndex + 1) % textList.length;
+                  typingSpeed = 100;
+                  setTimeout(typeEffect, 500);
+                } else {
+                  setTimeout(typeEffect, typingSpeed);
+                }
+              }
+            
+              // Start the typing effect
+              typeEffect();
+            </script>
+        
+        </section>
+
         </section>
 
 
